@@ -1,0 +1,14 @@
+---
+interface Props {
+	title: string;
+    paddingX?: string;
+    type: "primary" | "secondary" | "navLink" ;
+}
+
+const { title, type, paddingX } = Astro.props;
+---
+
+
+	<button class=`text-white py-4 text-sm rounded-xl ${paddingX ? paddingX : "px-4"} ${type === "primary" ? "bg-primary border border-primary" : type === "secondary" ? "hover:text-primary border border-primary" : type === "navLink" ? "hover:text-primary" : "hidden"} interactive-button `>
+			{title}
+	</button>

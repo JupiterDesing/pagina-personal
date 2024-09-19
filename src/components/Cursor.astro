@@ -1,0 +1,85 @@
+<!-- Este componente será exclusivo del cliente -->
+<div class="cursor"></div>
+
+
+<style>
+  body {
+    cursor: none; /* Oculta el cursor por defecto */
+  }
+
+  .cursor {
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none;
+    z-index: 1000;
+    transform: translate(-50%, -50%);
+    transition: background-color 0.3s; /* Suaviza el cambio de color */
+  }
+
+  .interactive-button {
+    margin: 50px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer; /* Cambia el cursor por defecto al pasar sobre el botón */
+  }
+
+  .interactive-button:hover {
+    background-color: #0056b3;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const cursor = document.querySelector('.cursor') as HTMLElement;
+    const interactiveElements = document.querySelectorAll('.interactive-button');
+    
+    if (!cursor) return;
+
+    // Variables para el efecto de suavizado
+    let mouseX = 0;
+    let mouseY = 0;
+    let cursorX = 0;
+    let cursorY = 0;
+    const speed = 0.1; // Ajusta la velocidad del efecto de suavizado
+
+    // Evento de movimiento del ratón
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.pageX;
+      mouseY = e.pageY;
+    });
+
+    // Función para actualizar la posición del cursor
+    const updateCursor = () => {
+      cursorX += (mouseX - cursorX) * speed;
+      cursorY += (mouseY - cursorY) * speed;
+      cursor.style.left = `${cursorX}px`;
+      cursor.style.top = `${cursorY}px`;
+      requestAnimationFrame(updateCursor);
+    };
+
+    // Inicializa la posición del cursor en el lugar del ratón
+    cursorX = mouseX;
+    cursorY = mouseY;
+    cursor.style.left = `${cursorX}px`;
+    cursor.style.top = `${cursorY}px`;
+
+    // Inicia la actualización del cursor
+    updateCursor();
+
+    // Cambia el color del cursor al pasar sobre un botón
+    interactiveElements.forEach((element) => {
+      element.addEventListener('mouseenter', () => {
+        cursor.style.backgroundColor = 'blue'; // Cambia el color del cursor
+      });
+
+      element.addEventListener('mouseleave', () => {
+        cursor.style.backgroundColor = 'red'; // Reestablece el color del cursor
+      });
+    });
+  });
+</script>
