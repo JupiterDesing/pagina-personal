@@ -9,14 +9,16 @@ import Services from '../components/Services.astro';
 import Profiles from '../components/Profiles.astro';
 import Footer from '../components/Footer.astro';
 import Process from '../components/Process.astro';
+import Jobs from '../components/Jobs.astro';
 ---
 
 <Layout title="Jupiter Design">
-	<main class=" py-9">
+	<main class="w-full pt-9 flex flex-col items-center">
 		<Navbar />
 		<About />
 		<Services/>
 		<Profiles />
+		<Jobs />
 		<Process />
 		<AccordionComponent />
 		<Footer/>
@@ -24,9 +26,6 @@ import Process from '../components/Process.astro';
 	</main>
 </Layout>
 
-<style>
-	
 
-</style>
 
 

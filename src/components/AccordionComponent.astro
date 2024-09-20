@@ -1,10 +1,14 @@
 ---
 import { Accordion, AccordionItem } from 'free-astro-components'
 ---
-
+<div class="flex flex-col w-[980px] py-12 mb-40 gap-8">
+  <div class="flex flex-col gap-3 items-center">
+    <h2 class="text-5xl font-semibold text-white ">Preguntas frecuentes</h2>
+    <h3 class="text-2xl text-white font-light">Las preguntas más comunes que nos hacen.</h3>
+</div>
 <Accordion  >
   <AccordionItem title="Accordion 1">
-    <p>
+    <p class="text-white">
       Lorem ipsum, dolor sit amet consectetur adipisicing elit.
       Quidem asperiores, ut, atque non inventore, fugit sed
       totam explicabo quisquam itaque omnis eius eveniet rem vel
@@ -28,10 +32,5 @@ import { Accordion, AccordionItem } from 'free-astro-components'
     </p>
   </AccordionItem>
 </Accordion>
+</div>
 
-<style>
-  span {
-
-  color: rgb(var(--ac-white));
-}
-</style>

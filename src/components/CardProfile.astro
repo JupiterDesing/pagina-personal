@@ -9,15 +9,16 @@ interface Props {
 const {  image, body , title, subTitle} = Astro.props;
 ---
 
-<li class="flex flex-col border-small border-borderColor rounded-3xl">
-		<img src={image} class="text-primary text-xl font-normal" alt={title}>
-
+<li class="flex flex-col  rounded-3xl">
+		<img src={image} class="text-primary text-xl font-normal rounded-3xl border-small border-borderColor" alt={title}>
+		<div class="relative flex flex-col bottom-20 items-center">
 		<h4 class="text-white text-2xl font-semibold">
 			{title}
 		</h4>
         <p class="text-white text-2xl font-normal">
             {subTitle}
         </p>
+		</div>
 		<p class="text-white text-xl font-light">
 			{body}
 		</p>

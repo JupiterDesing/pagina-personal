@@ -10,8 +10,10 @@ const titlesRrss = [
     ];
 ---
 <>
-<hr class="border-small  border-primary">
-<div class="flex justify-between items-center">
+<div class="px-12 w-full">
+<hr class="border-small  border-borderColor w-full ">
+</div>
+<div class="flex justify-between items-center px-40 py-20 w-full" >
     <img src="/Isotipo-blanco.svg" alt="Isotipo de Jupiter Design, empresa de diseño gráfico">
     <ul class="flex flex-col gap-2">
         {titlesNavLink.map((title) => <Button title={title} type="navLink"/>)}

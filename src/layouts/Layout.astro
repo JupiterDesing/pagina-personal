@@ -24,29 +24,35 @@ const { title } = Astro.props;
 </html>
 <style is:global>
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
-:root {
-  --ac-transparent: transparent;
-  --ac-current: currentColor;
-  --ac-white: 255, 255, 255;
-  --ac-primary: 64, 93, 255;
-  --ac-secondary: 98, 251, 213;
-  --ac-dark: 22, 22, 22;
-  --ac-gray-100: 232, 232, 232;
-  --ac-gray-200: 185, 185, 185;
-  --ac-gray-300: 139, 139, 139;
-  --ac-gray-400: 92, 92, 92;
-  --ac-gray-500: 45, 45, 45;
-  --ac-success: 0, 255, 0;
-  --ac-warning: 255, 255, 0;
-  --ac-danger: 255, 0, 0;
-  
 
-}
+
 	html {
-		cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="36" viewBox="0 0 24 24"><path fill="%23010101" stroke="%23FFFFFF" stroke-width="1.5" d="M5.5 3.21V20.8c0 .45.54.67.85.35l4.86-4.86a.5.5 0 0 1 .35-.15h6.87a.5.5 0 0 0 .35-.85L6.35 2.85a.5.5 0 0 0-.85.35Z"></path></svg>'), auto;
-				font-family: Jost, sans-serif;
-		background: rgb(13, 13, 13);
-	}
+		cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="%23FFFFFF" d="M4.5.79v22.42l6.56-6.57h9.29L4.5.79z"></path></svg>'), auto;
 	
+	font-family: Jost, sans-serif;
+	background: rgb(13, 13, 13);
+	width: 100%;
+	}
+	.ac-accordion {
+
+  border-color: rgb(244, 136, 28) !important;
+  border-radius: 24px !important;
+  border: #767676 1px solid !important;
+  color: white !important;
+  padding: 8px 30px !important;
+  
+	}
+	.ac-accordion-item {
+		border: none !important;
+	}
+	.ac-accordion-item-title {
+		color: white !important;
+		font-family: Jost, sans-serif !important;
+		font-size: 20px !important;
+		
+	}
+	.ac-accordion-item-title path {
+		color: rgb(244, 136, 28) !important;
+	}
 	
 </style>
