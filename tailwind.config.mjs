@@ -4,8 +4,13 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				primary: '#FF520E',
+				primary: '#F4881C',
+				borderColor: '#767676',
+			},
+			borderWidth: {
+				small: '0.5px',
 			}
+			
 		},
 	},
 	plugins: [],

@@ -1,16 +1,25 @@
 ---
-import Button from '../components/Button.astro';
+
 import Layout from '../layouts/Layout.astro';
 import AccordionComponent from '../components/AccordionComponent.astro'
 import Cursor from '../components/Cursor.astro'
+import Navbar from '../components/Navbar.astro';
+import About from '../components/About.astro';
+import Services from '../components/Services.astro';
+import Profiles from '../components/Profiles.astro';
+import Footer from '../components/Footer.astro';
+import Process from '../components/Process.astro';
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<Button title="Button"  type="primary" />
-		<Button title="Button"  type="secondary" />
-		<Button title="Button"  type="navLink" />
+<Layout title="Jupiter Design">
+	<main class=" py-9">
+		<Navbar />
+		<About />
+		<Services/>
+		<Profiles />
+		<Process />
 		<AccordionComponent />
+		<Footer/>
 		<Cursor />
 	</main>
 </Layout>

@@ -1,0 +1,12 @@
+---
+import Button from "./Button.astro";
+
+const titlesNavLink = ['Servicios', 'Nosotros', 'Proyectos', 'Proceso'];
+---
+<div class="flex justify-between items-center px-40">
+    <img src="/logo-blanco.svg" alt="Logo de Jupiter Design, empresa de diseño gráfico">
+<ul class="flex">
+    {titlesNavLink.map((title) => <Button title={title} type="navLink"/>)}
+</ul>
+<Button title="Contacto" type="secondary"/>
+</div>

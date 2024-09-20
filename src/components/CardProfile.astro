@@ -1,0 +1,25 @@
+---
+interface Props {
+	image: string;
+	body: string;
+	title: string;
+    subTitle: string;
+}
+
+const {  image, body , title, subTitle} = Astro.props;
+---
+
+<li class="flex flex-col border-small border-borderColor rounded-3xl">
+		<img src={image} class="text-primary text-xl font-normal" alt={title}>
+
+		<h4 class="text-white text-2xl font-semibold">
+			{title}
+		</h4>
+        <p class="text-white text-2xl font-normal">
+            {subTitle}
+        </p>
+		<p class="text-white text-xl font-light">
+			{body}
+		</p>
+
+</li>

@@ -8,28 +8,28 @@
   }
 
   .cursor {
-    width: 20px;
-    height: 20px;
-    background-color: red;
+    width: 14px;
+    height: 14px;
+    background-color: #FF520E;
     border-radius: 50%;
     position: absolute;
     pointer-events: none;
     z-index: 1000;
     transform: translate(-50%, -50%);
-    transition: background-color 0.3s; /* Suaviza el cambio de color */
+    transition: background-color 0.5s; /* Suaviza el cambio de color */
   }
 
   .interactive-button {
     margin: 50px;
     padding: 10px 20px;
     border: none;
-    background-color: #007bff;
+    background-color: rgb(13, 13, 13);
     color: white;
-    cursor: pointer; /* Cambia el cursor por defecto al pasar sobre el botón */
+     /* Cambia el cursor por defecto al pasar sobre el botón */
   }
 
   .interactive-button:hover {
-    background-color: #0056b3;
+    background-color: rgb(13, 13, 13);
   }
 </style>
 
@@ -74,11 +74,11 @@
     // Cambia el color del cursor al pasar sobre un botón
     interactiveElements.forEach((element) => {
       element.addEventListener('mouseenter', () => {
-        cursor.style.backgroundColor = 'blue'; // Cambia el color del cursor
+        cursor.style.backgroundColor = 'rgb(13, 13, 13)'; // Cambia el color del cursor
       });
 
       element.addEventListener('mouseleave', () => {
-        cursor.style.backgroundColor = 'red'; // Reestablece el color del cursor
+        cursor.style.backgroundColor = '#FF520E'; // Reestablece el color del cursor
       });
     });
   });

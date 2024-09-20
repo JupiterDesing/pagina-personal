@@ -1,0 +1,34 @@
+---
+import Card from "./Card.astro";
+const cards = [
+    {
+        header:"01",
+        title:"Asesorías.",
+        body:"Te guiamos en cada paso del camino para que tu proyecto alcance todo su potencial."
+    }, 
+    {
+        header:"02",
+        title:"Diseño de identidad.",
+        body:"Creamos logos y sistemas visuales que reflejan la esencia de tu marca."
+    },
+    {
+        header:"03",
+        title:"Branding.",
+        body:"Diseñamos marcas completas, desde el concepto hasta la implementación."
+    },
+    {
+        header:"04",
+        title:"Desarrollo web.",
+        body:"Diseños personalizados y funcionales que maximizan la experiencia de usuario."
+    }]
+---
+<div class="flex flex-col gap-8 mb-40 items-center px-40">
+    <div class="flex flex-col gap-3 items-center">
+    <h2 class="text-5xl font-semibold text-white">Nuestros servicios</h2>
+    <h3 class="text-2xl text-white font-light">Soluciones creativas de otro mundo</h3>
+</div>
+    <div class="grid grid-cols-2 gap-4">
+    {cards.map ((card) => <Card header={card.header} title={card.title} body={card.body}/>)}
+    </div>
+
+</div>

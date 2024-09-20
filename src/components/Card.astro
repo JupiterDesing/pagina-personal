@@ -2,21 +2,22 @@
 interface Props {
 	title: string;
 	body: string;
-	href: string;
+	header: string;
 }
 
-const { href, title, body } = Astro.props;
+const {  title, body , header} = Astro.props;
 ---
 
-<li class="link-card">
-	<a href={href}>
-		<h2>
+<li class="flex flex-col border-small border-borderColor rounded-3xl p-6 gap-6">
+		<span class="text-primary text-xl font-normal">
+			{header}
+		</span>
+		<h4 class="text-white text-2xl font-semibold">
 			{title}
-			<span>&rarr;</span>
-		</h2>
-		<p>
+		</h4>
+		<p class="text-white text-xl font-light leading-7 mb-16">
 			{body}
 		</p>
-	</a>
+
 </li>
 
