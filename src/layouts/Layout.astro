@@ -41,8 +41,38 @@ const { title } = Astro.props;
       content="/pagina-personal/public/Isotipo-blanco.svg"
     />
     <meta name="twitter:site" content="@JupiterDesign" />
-
+	<!-- Canonical URL -->
     <link rel="canonical" href="https://www.jupiterdesign.com" />
+	<!-- Schema -->
+	<script type="application/ld+json">{
+		"@context": "https://schema.org",
+		"@type": "Organization",
+		"name": "Jupiter Design",
+		"url": "https://www.jupiterdesign.com",
+		"logo": "logo-blanco.svg",
+		"sameAs": [
+		  "jupiterdesignstudio24@gmail.com",
+		  "https://www.instagram.com/jupiterrdesign_/",
+		  "https://www.linkedin.com/company/104610019/admin/inbox/"
+		],
+		"contactPoint": {
+		  "@type": "ContactPoint",
+		  "telephone": "+54 - 2613012708",
+		  "contactType": "Customer Service",
+		  "areaServed": "Worldwide",
+		  "availableLanguage": [ "Spanish"]
+		},
+		"address": {
+		  "@type": "PostalAddress",
+		  "streetAddress": "Calle Miller",
+		  "addressLocality": "Mendoza",
+		  "addressRegion": "Mendoza",
+		  "postalCode": "5519",
+		  "addressCountry": "AR"
+		},
+		"description": "Explora diseños gráficos innovadores y creativos. Servicios de diseño personalizado para marcas que buscan destacar."
+	  }
+	  </script>
 
     <meta charset="UTF-8" />
     <meta
