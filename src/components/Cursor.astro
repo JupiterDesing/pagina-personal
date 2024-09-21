@@ -18,7 +18,20 @@
     transform: translate(-50%, -50%);
     transition: background-color 0.5s; /* Suaviza el cambio de color */
   }
-
+  .cursor::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px; /* Tamaño más grande */
+    height: 40px;
+    background: radial-gradient(50% 50% at 50% 50%, #F4881C 0%, rgba(244, 136, 28, 0.00) 100%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: -1; /* Para que quede detrás del cursor */
+    filter: blur(20px);
+  }
   .interactive-button {
     margin: 50px;
     padding: 10px 20px;

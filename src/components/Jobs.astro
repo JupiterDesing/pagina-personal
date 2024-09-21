@@ -3,13 +3,13 @@ import CardProfile from "./CardProfile.astro";
 
 const cards = [
     {
-        image :"/marianela-profile.png",
+        image :"/marianela-profile.webp",
         title:"Mar",
         subTitle:"Diseñadora",
         body:""
     }, 
     {
-        image :"/julian-profile.png",
+        image :"/julian-profile.webp",
         title:"Julián",
         subTitle:"Programador",
         body:""
@@ -22,8 +22,6 @@ const cards = [
     <h2 class="text-5xl font-semibold text-white ">Proyectos</h2>
     <h3 class="text-2xl text-white font-light">Descubre algunos de nuestros proyectos recientes.</h3>
 </div>
-    <div class="grid grid-cols-2 gap-4">
-    {cards.map ((card) => <CardProfile image={card.image} title={card.title} subTitle={card.subTitle} body={card.body}/>)}
-    </div>
+    
 
 </div>

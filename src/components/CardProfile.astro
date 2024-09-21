@@ -9,18 +9,23 @@ interface Props {
 const {  image, body , title, subTitle} = Astro.props;
 ---
 
-<li class="flex flex-col  rounded-3xl">
-		<img src={image} class="text-primary text-xl font-normal rounded-3xl border-small border-borderColor" alt={title}>
-		<div class="relative flex flex-col bottom-20 items-center">
+<li class="relative flex flex-col rounded-3xl overflow-hidden group">
+		<img src={image} class="text-primary text-xl font-normal rounded-3xl border-small border-borderColor h-[720px]  w-[480px]" alt={title}>
+		<span class="absolute top-100 bg-backgroundDefault z-20 h-[720px]  w-[480px] rounded-3xl"/>
+		<div class="absolute flex flex-col -bottom-14 items-center z-40 group-hover:-translate-y-40 duration-500 transform gap-3">
 		<h4 class="text-white text-2xl font-semibold">
 			{title}
 		</h4>
         <p class="text-white text-2xl font-normal">
             {subTitle}
         </p>
-		</div>
-		<p class="text-white text-xl font-light">
+		
+		<p class="text-white text-xl font-light opacity-0 group-hover:opacity-100 w-2/3 text-center ">
 			{body}
 		</p>
+	</div>
 
+	{/* <span class="absolute top-0 left-0 w-full h-full z-30 backdrop-blur-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>*/}
+  
+		<span class="absolute top-96 left-52 bg-backgroundPrimary z-20 h-[800px] w-[800px] rounded-3xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>
 </li>
