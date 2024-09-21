@@ -1,6 +1,6 @@
 ---
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
@@ -8,51 +8,87 @@ const { title } = Astro.props;
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Explora diseños gráficos innovadores y creativos. Servicios de diseño personalizado para marcas que buscan destacar." />
-		<meta name="keywords" content="diseño gráfico, branding, diseño web, ilustración, logotipos" />
-		<meta name="author" content="Jupiter Design" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <!-- Open Graph Meta Tags -->
+    <meta
+      property="og:title"
+      content="Jupiter Design | Diseños Gráficos Creativos y Personalizados"
+    />
+    <meta
+      property="og:description"
+      content="Descubre los servicios de diseño gráfico de Jupiter Design. Ofrecemos branding, ilustración, logotipos y diseño web para marcas que buscan destacar con creatividad."
+    />
+    <meta
+      property="og:image"
+      content="/pagina-personal/public/Isotipo-blanco.svg"
+    />
+    <meta property="og:url" content="https://www.jupiterdesign.com" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Jupiter Design" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Jupiter Design | Diseños Gráficos Creativos y Personalizados"
+    />
+    <meta
+      name="twitter:description"
+      content="Explora servicios de diseño gráfico innovadores. Branding, logotipos, ilustración y diseño web personalizados para tu marca."
+    />
+    <meta
+      name="twitter:image"
+      content="/pagina-personal/public/Isotipo-blanco.svg"
+    />
+    <meta name="twitter:site" content="@JupiterDesign" />
+
+    <link rel="canonical" href="https://www.jupiterdesign.com" />
+
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Explora diseños gráficos innovadores y creativos. Servicios de diseño personalizado para marcas que buscan destacar."
+    />
+    <meta
+      name="keywords"
+      content="diseño gráfico, branding, diseño web, ilustración, logotipos"
+    />
+    <meta name="author" content="Jupiter Design" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
 <style is:global>
-@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+  @import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
 
-
-	html {
-		cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="%23FFFFFF" d="M4.5.79v22.42l6.56-6.57h9.29L4.5.79z"></path></svg>'), auto;
-	
-	font-family: Jost, sans-serif;
-	background: rgb(13, 13, 13);
-	width: 100%;
-	}
-	.ac-accordion {
-
-  border-color: rgb(244, 136, 28) !important;
-  border-radius: 24px !important;
-  border: #767676 1px solid !important;
-  color: white !important;
-  padding: 8px 30px !important;
-  
-	}
-	.ac-accordion-item {
-		border: none !important;
-	}
-	.ac-accordion-item-title {
-		color: white !important;
-		font-family: Jost, sans-serif !important;
-		font-size: 20px !important;
-		
-	}
-	.ac-accordion-item-title path {
-		color: rgb(244, 136, 28) !important;
-	}
-	
+  html {
+    cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="%23FFFFFF" d="M4.5.79v22.42l6.56-6.57h9.29L4.5.79z"></path></svg>'),
+      auto;
+    font-family: Jost, sans-serif;
+    background: rgb(13, 13, 13);
+    width: 100%;
+  }
+  .ac-accordion {
+    border-color: rgb(244, 136, 28) !important;
+    border-radius: 24px !important;
+    border: #767676 1px solid !important;
+    color: white !important;
+    padding: 8px 30px !important;
+  }
+  .ac-accordion-item {
+    border: none !important;
+  }
+  .ac-accordion-item-title {
+    color: white !important;
+    font-family: Jost, sans-serif !important;
+    font-size: 20px !important;
+  }
+  .ac-accordion-item-title path {
+    color: rgb(244, 136, 28) !important;
+  }
 </style>
