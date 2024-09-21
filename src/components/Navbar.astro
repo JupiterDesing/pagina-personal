@@ -5,8 +5,8 @@ const titlesNavLink = ['Servicios', 'Nosotros', 'Proyectos', 'Proceso'];
 ---
 <div class="flex justify-between items-center w-[980px]">
     <img src="/logo-blanco.svg" alt="Logo de Jupiter Design, empresa de diseño gráfico" class="hover:rotate-180 transition-ease-in duration-500">
-<ul class="flex">
+<div class="flex">
     {titlesNavLink.map((title) => <Button title={title} type="navLink"/>)}
-</ul>
+</div>
 <Button title="Contacto" type="secondary"/>
 </div>

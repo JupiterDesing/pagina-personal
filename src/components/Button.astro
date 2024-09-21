@@ -4,14 +4,15 @@ interface Props {
     paddingX?: string;
     type: "primary" | "secondary" | "navLink" ;
 	icon?: string
+	altIcon?: string
 }
 
-const { title, type, paddingX, icon } = Astro.props;
+const { title, type, paddingX, icon , altIcon} = Astro.props;
 ---
 
 
 	<button class=`text-white py-3 text-xl rounded-xl gap-2 flex items-center w-min font-normal ${paddingX ? paddingX : "px-5"} ${type === "primary" ? "bg-primary hover:bg-[#D26314] interactive-button " : type === "secondary" ? "hover:text-primary border border-white hover:border-primary" : type === "navLink" ? "hover:text-primary group" : "hidden"} `>
-			{icon && <img src={icon} alt={title} />}{title}
+			{icon && <img src={icon} alt={altIcon} />}{title}
 	</button>
 
 	
