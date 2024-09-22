@@ -1,12 +1,14 @@
 ---
 import Button from "./Button.astro";
 
-const titlesNavLink = ['Servicios', 'Nosotros', 'Proyectos', 'Proceso'];
+const titlesNavLink = ['Servicios', 'Nosotros', 'Proyectos', 'Proceso', 'Preguntas'];
 ---
-<div class="flex justify-between items-center w-[980px]">
-    <img src="/logo-blanco.svg" alt="Logo de Jupiter Design, empresa de diseño gráfico" class="hover:rotate-180 transition-ease-in duration-500">
+<div class="flex justify-center fixed w-full z-50 backdrop-blur-lg pb-3 pt-9">
+    <div class="flex justify-between items-center w-[980px]">
+    <a href="#home"><img src="/logo-blanco.svg" alt="Logo de Jupiter Design, empresa de diseño gráfico" class="hover:rotate-180 transition-ease-in duration-500"></a>
 <div class="flex">
-    {titlesNavLink.map((title) => <Button title={title} type="navLink"/>)}
+    {titlesNavLink.map((title) =><a href={`#${title.toLowerCase()}`}> <Button title={title} type="navLink"/></a>)}
 </div>
 <Button title="Contacto" type="secondary"/>
+</div>
 </div>

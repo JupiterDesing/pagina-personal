@@ -3,10 +3,10 @@ import Button from "./Button.astro";
 
 const titlesNavLink = ['Servicios', 'Nosotros', 'Proyectos', 'Proceso'];
 const titlesRrss = [
-    {title:'Instagram', icon: "/instagram-brands-solid.svg", altIcon:"Instagram de Jupiter Design, empresa de diseño gráfico"},
-    {title:'Linkedin', icon: "/linkedin-in-brands-solid.svg", altIcon:"Linkedin de Jupiter Design, empresa de diseño gráfico"},
-    {title: 'Tiktok', icon: "/tiktok-brands-solid.svg", altIcon:"Tiktok de Jupiter Design, empresa de diseño gráfico"},
-    {title:  'Gmail', icon: "/at-solid.svg", altIcon:"Gmail de Jupiter Design, empresa de diseño gráfico"}
+    {title:'Instagram', icon: "/instagram-brands-solid.svg", altIcon:"Instagram de Jupiter Design, empresa de diseño gráfico", href: "https://www.instagram.com/jupiterrdesign_/"},
+    {title:'Linkedin', icon: "/linkedin-in-brands-solid.svg", altIcon:"Linkedin de Jupiter Design, empresa de diseño gráfico", href: "https://www.linkedin.com/company/104610019/admin/inbox/"},
+    {title: 'Tiktok', icon: "/tiktok-brands-solid.svg", altIcon:"Tiktok de Jupiter Design, empresa de diseño gráfico", href: "https://www.tiktok.com/@jupiterrdesign_"},
+    {title:  'Gmail', icon: "/at-solid.svg", altIcon:"Gmail de Jupiter Design, empresa de diseño gráfico", href: "mailto:jupiterdesignstudio24@gmail"},
     ];
 ---
 <>
@@ -14,16 +14,39 @@ const titlesRrss = [
 <hr class="border-small  border-borderColor w-full ">
 </div>
 <div class="flex justify-between items-center px-40 py-20 w-full" >
-    <img src="/Isotipo-blanco.svg" alt="Isotipo de Jupiter Design, empresa de diseño gráfico">
+    <div 
+  class="relative transition-transform duration-500 hover:scale-90 divRotate"
+  style="perspective: 1000px;" 
+  
+>
+  <img 
+    src="/Isotipo-blanco.svg" 
+    alt="Isotipo de Jupiter Design, empresa de diseño gráfico" 
+    class="w-full h-auto transition-transform duration-1000 transform"
+    style="transform: rotateY(0deg); transform-style: preserve-3d;"
+    onmouseover="this.style.transform='rotateY(360deg)'"
+
+  >
+</div>
     <div class="flex flex-col gap-2">
-        {titlesNavLink.map((title) => <Button title={title} type="navLink"/>)}
+        {titlesNavLink.map((title) => <Button title={title} type="navLink" />)}
         
     </div>
 
     <div class="flex flex-col gap-2">
-        {titlesRrss.map((title) => <Button title={title.title} altIcon ={title.altIcon} type="navLink" icon={title.icon}/>)}
+        {titlesRrss.map((title) => 
+        <a href={title.href} target="_blank" rel="noopener noreferrer" class="flex gap-2"> 
+
+        <Button title={title.title}  type="navLink"  icon={title.icon} altIcon={title.altIcon}  />
+        </a>)
+        }
 
     </div>
 
 </div>
 </>
+<style>
+    .divRotate:hover img {
+        transform: rotateY(360deg);
+    }
+</style>
