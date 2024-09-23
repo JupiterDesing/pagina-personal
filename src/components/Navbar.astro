@@ -1,14 +1,82 @@
 ---
 import Button from "./Button.astro";
 
+// Datos del menú
 const titlesNavLink = ['Servicios', 'Nosotros', 'Proyectos', 'Proceso', 'Preguntas'];
 ---
 <div class="flex justify-center fixed w-full z-50 backdrop-blur-lg pb-3 pt-9">
-    <div class="flex justify-between items-center w-[980px]">
-    <a href="#home"><img src="/logo-blanco.svg" alt="Logo de Jupiter Design, empresa de diseño gráfico" class="hover:rotate-180 transition-ease-in duration-500"></a>
-<div class="flex">
-    {titlesNavLink.map((title) =><a href={`#${title.toLowerCase()}`}> <Button title={title} type="navLink"/></a>)}
+    <div class="flex justify-between items-center xl:w-[980px] w-full px-9 xl:px-0">
+      <!-- Logo -->
+      <a href="#home" class="relative z-20 menu-link">
+        <img src="/logo-blanco.svg" alt="Logo de Jupiter Design" class="hover:rotate-180 transition-ease-in duration-500" />
+      </a>
+  
+      <!-- Menú en pantallas grandes -->
+      <div class="hidden md:flex space-x-4">
+        {titlesNavLink.map((title) => (
+          <a href={`#${title.toLowerCase()}`}>
+            <Button title={title} type="navLink" />
+          </a>
+        ))}
+      </div>
+  
+      <!-- Ícono de hamburguesa para pantallas pequeñas -->
+      <i 
+        class="fa-solid fa-bars md:hidden text-white text-3xl cursor-pointer relative z-20"
+        id="menutoggle">
+      </i>
+  
+      <!-- Menú de contacto en pantallas grandes -->
+      <div class="hidden md:flex">
+        <Button title="Contacto" type="secondary" />
+      </div>
+    </div>
+  
+    <!-- Menú desplegable en pantallas pequeñas -->
+    <div class="md:hidden w-full absolute top-0 left-0 pt-28 pb-10 px-4 flex flex-col items-start bg-gray-900 text-white transition-transform duration-300 ease-in-out transform -translate-y-full" id="menu">
+        {titlesNavLink.map((title) => (
+          <a href={`#${title.toLowerCase()}`} class="py-2 menu-link">
+            <Button title={title} type="navLink" />
+          </a>
+        ))}
+        <div class="mt-4 ml-4">
+        <Button title="Contacto" type="secondary" />
+    </div>
+    </div>
 </div>
-<Button title="Contacto" type="secondary"/>
-</div>
-</div>
+
+<script>
+    // Script para el toggle del menú
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuButton = document.getElementById("menutoggle");
+      const menu = document.getElementById("menu");
+      const menuLinks = document.querySelectorAll('.menu-link');
+      
+      // Función para abrir y cerrar el menú
+      const toggleMenu = () => {
+        if (menu?.classList.contains("-translate-y-full")) {
+          menu.classList.remove("-translate-y-full");
+          menu.classList.add("translate-y-0");
+          menuButton?.classList.remove("fa-bars");
+          menuButton?.classList.add("fa-times");
+        } else {
+          menu?.classList.remove("translate-y-0");
+          menu?.classList.add("-translate-y-full");
+          menuButton?.classList.remove("fa-times");
+          menuButton?.classList.add("fa-bars");
+        }
+      };
+  
+      // Evento para abrir/cerrar el menú al hacer clic en el botón de hamburguesa
+      menuButton?.addEventListener("click", toggleMenu);
+  
+      // Evento para cerrar el menú al hacer clic en cualquier enlace del menú
+      menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (menu?.classList.contains("translate-y-0")) {
+            toggleMenu();
+          }
+        });
+      });
+    });
+  </script>

@@ -3,21 +3,17 @@ interface Props {
 	title: string;
     paddingX?: string;
     type: "primary" | "secondary" | "navLink" ;
-	icon?: string
-	altIcon?: string
+	icon?: boolean;
 
 }
 
-const { title, type, paddingX, altIcon, icon} = Astro.props;
+const { title, type, paddingX, icon} = Astro.props;
 ---
 
 
-	<button class=`text-white py-3 text-xl rounded-xl gap-2 flex items-center w-min font-normal group ${paddingX ? paddingX : "px-5"} ${type === "primary" ? "bg-primary hover:bg-[#D26314] interactive-button " : type === "secondary" ? "hover:text-primary border border-white hover:border-primary" : type === "navLink" ? "hover:text-primary group" : "hidden"} `>
-		{icon && (
-			<svg class="w-6 h-6 fill-current text-white group-hover:text-primary" aria-label={altIcon}>
-				<use href={icon} />
-			</svg>
-		)}{title}
+	<button class=`text-white py-3 text-xl rounded-xl gap-2 flex items-center w-min font-normal group ${paddingX ? paddingX : "px-5"} ${type === "primary" ? "bg-[#D26314] hover:bg-[#C25406] interactive-button " : type === "secondary" ? "hover:text-primary border border-white hover:border-primary" : type === "navLink" ? "hover:text-primary group" : "hidden"} `>
+		{icon && (title === 'Instagram' ? <i class="fa-brands fa-instagram" ></i> : title === 'Linkedin' ? <i class="fa-brands fa-linkedin"></i> : title === 'Tiktok' ? <i class="fa-brands fa-tiktok"></i> : <i class="fa-solid fa-at"></i>)}
+		{title}
 	</button>
 
 	

@@ -3,17 +3,17 @@ import Button from "./Button.astro";
 
 const titlesNavLink = ['Servicios', 'Nosotros', 'Proyectos', 'Proceso'];
 const titlesRrss = [
-    {title:'Instagram', icon: "/instagram-brands-solid.svg", altIcon:"Instagram de Jupiter Design, empresa de diseño gráfico", href: "https://www.instagram.com/jupiterrdesign_/"},
-    {title:'Linkedin', icon: "/linkedin-in-brands-solid.svg", altIcon:"Linkedin de Jupiter Design, empresa de diseño gráfico", href: "https://www.linkedin.com/company/104610019/admin/inbox/"},
-    {title: 'Tiktok', icon: "/tiktok-brands-solid.svg", altIcon:"Tiktok de Jupiter Design, empresa de diseño gráfico", href: "https://www.tiktok.com/@jupiterrdesign_"},
-    {title:  'Gmail', icon: "/at-solid.svg", altIcon:"Gmail de Jupiter Design, empresa de diseño gráfico", href: "mailto:jupiterdesignstudio24@gmail"},
+    {title:'Instagram',  href: "https://www.instagram.com/jupiterrdesign_/"},
+    {title:'Linkedin',  href: "https://www.linkedin.com/company/104610019/admin/inbox/"},
+    {title: 'Tiktok',  href: "https://www.tiktok.com/@jupiterrdesign_"},
+    {title:  'Gmail',  href: "mailto:jupiterdesignstudio24@gmail"},
     ];
 ---
 <>
 <div class="px-12 w-full">
-<hr class="border-small  border-borderColor w-full ">
+<hr class="border-small  border-borderColor w-full  ">
 </div>
-<div class="flex justify-between items-center px-40 py-20 w-full" >
+<div class="flex xl:flex-row flex-col justify-between items-center xl:px-40 py-20 w-full xl:gap-0 gap-8" >
     <div 
   class="relative transition-transform duration-500 hover:scale-90 divRotate"
   style="perspective: 1000px;" 
@@ -28,6 +28,7 @@ const titlesRrss = [
 
   >
 </div>
+<div class="flex xl:gap-40">
     <div class="flex flex-col gap-2">
         {titlesNavLink.map((title) => <Button title={title} type="navLink" />)}
         
@@ -35,14 +36,14 @@ const titlesRrss = [
 
     <div class="flex flex-col gap-2">
         {titlesRrss.map((title) => 
-        <a href={title.href} target="_blank" rel="noopener noreferrer" class="flex gap-2"> 
-
-        <Button title={title.title}  type="navLink"  icon={title.icon} altIcon={title.altIcon}  />
+        <a href={title.href} target="_blank" rel="noopener noreferrer" class="flex gap-2">
+            
+        <Button title={title.title}  type="navLink" icon  />
         </a>)
         }
 
     </div>
-
+</div>
 </div>
 </>
 <style>

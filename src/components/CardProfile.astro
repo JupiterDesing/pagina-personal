@@ -10,8 +10,8 @@ const {  image, body , title, subTitle} = Astro.props;
 ---
 
 <li class="relative flex flex-col rounded-3xl overflow-hidden group">
-		<img src={image} class="text-primary text-xl font-normal rounded-3xl border-small border-borderColor h-[720px]  w-[480px]" alt={title}>
-		<span class="absolute top-100 bg-backgroundDefault z-20 h-[720px]  w-[480px] rounded-3xl"/>
+		<img src={image} class="text-primary text-xl font-normal rounded-3xl border-small border-borderColor w-full xl:h-[720px]  xl:w-[480px]" alt={title}>
+		<span class="absolute top-100 bg-backgroundDefault z-20 w-full h-full xl:h-[720px]  xl:w-[480px] rounded-3xl"/>
 		<div class="absolute flex flex-col -bottom-14 items-center z-40 group-hover:-translate-y-40 duration-500 transform gap-3">
 		<h4 class="text-white text-2xl font-semibold">
 			{title}
