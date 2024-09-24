@@ -82,7 +82,7 @@ const { title } = Astro.props;
     />
     <meta
       name="keywords"
-      content="diseño gráfico, branding, diseño web, ilustración, logotipos"
+      content="diseño gráfico, branding, diseño web, ilustración, logotipos, logo, logos, marcas, marca, marcas de marca, marketing, marketing digital, marketing online, marketing digital, redes sociales"
     />
     <meta name="author" content="Jupiter Design" />
     <meta name="viewport" content="width=device-width" />
@@ -120,10 +120,16 @@ const { title } = Astro.props;
     font-family: Jost, sans-serif !important;
     font-size: 20px !important;
   }
+  
   .ac-accordion-item-title path {
     color: rgb(244, 136, 28) !important;
+    width: 50px !important;
   }
-
+  @media (max-width: 768px) {
+    .ac-accordion-item-title span { 
+      width: 50px !important;
+      }
+  }
   
   .slick-arrow {
   background-color: #F4881C !important;
