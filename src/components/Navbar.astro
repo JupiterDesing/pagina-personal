@@ -28,19 +28,19 @@ const titlesNavLink = ['Servicios', 'Nosotros', 'Proyectos', 'Proceso', 'Pregunt
   
       <!-- Menú de contacto en pantallas grandes -->
       <div class="hidden md:flex">
-        <Button title="Contacto" type="secondary" />
+        <a href=""></a><Button title="Contacto" type="secondary" />
       </div>
     </div>
   
     <!-- Menú desplegable en pantallas pequeñas -->
-    <div class="md:hidden w-full absolute top-0 left-0 pt-28 pb-10 px-4 flex flex-col items-start bg-gray-900 text-white transition-transform duration-300 ease-in-out transform -translate-y-full" id="menu">
+    <div class="md:hidden w-full absolute top-0 left-0 pt-28 pb-10 px-4 flex flex-col h-screen items-start bg-[#1B1B1B] text-white transition-transform duration-300 ease-in-out transform -translate-y-full" id="menu">
         {titlesNavLink.map((title) => (
           <a href={`#${title.toLowerCase()}`} class="py-2 menu-link">
             <Button title={title} type="navLink" />
           </a>
         ))}
         <div class="mt-4 ml-4">
-        <Button title="Contacto" type="secondary" />
+          <a href="https://api.whatsapp.com/send?phone=542613012708"  target="_blank" rel="noopener noreferrer"><Button title="Contacto" type="secondary" /> </a>
     </div>
     </div>
 </div>

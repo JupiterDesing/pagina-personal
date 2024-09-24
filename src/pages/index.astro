@@ -14,7 +14,7 @@ import Jobs from '../components/Jobs.astro';
 ---
 
 <Layout title="Jupiter Design">
-	<main class="w-screen relative flex flex-col items-center overflow-hidden">
+	<main class="w-full relative flex flex-col items-center overflow-hidden">
 		
 		<Navbar />
 		<About />
@@ -28,8 +28,8 @@ import Jobs from '../components/Jobs.astro';
 		<Footer/>
 		<Cursor />
 		
-		<span class="absolute top-[-800px] left-[600px] bg-backgroundPrimary z-0 h-[1600px] w-[1600px] rounded-3xl opacity-100 "></span>
-		<span class="absolute  min-h-[100vh] w-full backdrop-blur-xl"></span>
+		<span class="absolute top-[-800px] left-0 lg:left-[600px] bg-backgroundPrimary z-0 h-[1600px] w-[1600px] rounded-3xl opacity-100 "></span>
+		<span class="absolute  min-h-[100vh] w-full blur-xl"></span>
 	</main>
 </Layout>
 

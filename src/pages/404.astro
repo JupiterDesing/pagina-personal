@@ -1,0 +1,47 @@
+---
+import Button from "../components/Button.astro";
+import Layout from "../layouts/Layout.astro";
+
+// Este bloque es opcional si necesitas lógica específica
+const pageTitle = "Página no encontrada";
+---
+
+<Layout title="Jupiter Design">
+  <body>
+    <div class="container">
+      <h1>404</h1>
+      <p>Oops, la página que estás buscando no existe.</p>
+      <a href="/"><Button title="Volver al inicio" type="primary"/></a>
+    </div>
+  </body>
+</Layout>
+<style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      color: #ffffff;
+    }
+
+    p {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: #ffffff;
+    }
+
+
+  </style>

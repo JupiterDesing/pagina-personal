@@ -50,7 +50,6 @@
   document.addEventListener('DOMContentLoaded', () => {
     const cursor = document.querySelector('.cursor') as HTMLElement;
     const interactiveElements = document.querySelectorAll('.interactive-button');
-    
     if (!cursor) return;
 
     // Variables para el efecto de suavizado
@@ -89,10 +88,13 @@
       element.addEventListener('mouseenter', () => {
         cursor.style.backgroundColor = 'rgb(13, 13, 13)'; // Cambia el color del cursor
       });
+      
 
       element.addEventListener('mouseleave', () => {
         cursor.style.backgroundColor = '#F4881C'; // Reestablece el color del cursor
       });
     });
+
+
   });
 </script>
