@@ -6,13 +6,15 @@ const cards = [
         image :"/marianela-profile.webp",
         title:"Mar",
         subTitle:"Diseñadora",
-        body:"Hola yo me encargo de la parte creativa y te ayudare a que tu proyecto se convierta en una marca."
+        body:"Hola yo me encargo de la parte creativa y te ayudare a que tu proyecto se convierta en una marca.",
+        Link:"https://marianelacorrea.myportfolio.com/work"
     }, 
     {
         image :"/julian-profile.webp",
         title:"Julián",
         subTitle:"Programador",
-        body:"Hola yo me encargo de la creacion de sitios web y que tu pagina se posicione en el primer lugar."
+        body:"Hola yo me encargo de la creacion de sitios web y que tu pagina se posicione en el primer lugar.",
+        Link:"https://portfolio-julian-magallanes-desarrollador.vercel.app/trabajos"
     }
 ]
 ---
@@ -23,7 +25,7 @@ const cards = [
     <h3 class="text-lg xl:text-2xl text-white font-light text-center">Somos un equipo de creativos apasionados por el diseño y la comunicación visual.</h3>
 </div>
     <ul class="lg:grid lg:grid-cols-2 flex flex-col gap-4">
-    {cards.map ((card) => <CardProfile image={card.image} title={card.title} subTitle={card.subTitle} body={card.body}/>)}
+    {cards.map ((card) => <CardProfile image={card.image} title={card.title} subTitle={card.subTitle} body={card.body} Link={card.Link}/>)}
     </ul>
 
 </div>

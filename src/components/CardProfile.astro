@@ -4,9 +4,10 @@ interface Props {
 	body: string;
 	title: string;
     subTitle: string;
+	Link: string;
 }
 
-const {  image, body , title, subTitle} = Astro.props;
+const {  image, body , title, subTitle, Link} = Astro.props;
 ---
 
 <li class="relative flex flex-col rounded-3xl overflow-hidden group">
@@ -23,6 +24,7 @@ const {  image, body , title, subTitle} = Astro.props;
 		<p class="text-white text-xl font-light opacity-0 group-hover:opacity-100 w-2/3 text-center ">
 			{body}
 		</p>
+		<a href={Link} target="_blank" rel="noopener noreferrer" class="border-white border rounded-lg text-white text-xl font-light opacity-0 group-hover:opacity-100 px-8 text-center ">Ver más</a>
 	</div>
 
 	{/* <span class="absolute top-0 left-0 w-full h-full z-30 backdrop-blur-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>*/}

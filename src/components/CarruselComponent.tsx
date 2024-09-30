@@ -12,7 +12,7 @@ const CarruselComponent: React.FC = () => {
 
   return (
     
-    <Carousel arrows slidesToShow={2} dots={false}>
+    <Carousel arrows slidesToShow={window.innerWidth < 768 ? 1 : 2 } dots={false}>
   {jobs.map((job) => (
     <div className='w-full rounded-2xl px-2 h-[280px] relative overflow-hidden'>
       {/* Imagen del job */}
