@@ -105,6 +105,28 @@ const { title } = Astro.props;
     width: 100%;
     scroll-behavior: smooth;
   }
+  /* Ancho de la barra de desplazamiento */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Fondo de la barra de desplazamiento */
+::-webkit-scrollbar-track {
+  background: #1A1A1A; /* Color del fondo */
+}
+
+/* Color de la barra de desplazamiento */
+::-webkit-scrollbar-thumb {
+  background-color: #F4881C; /* Color de la barra */
+  border-radius: 6px; /* Bordes redondeados */
+  border: 2px solid #1A1A1A; /* Borde alrededor de la barra */
+}
+
+/* Color de la barra al hacer hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #f15a24; /* Color más oscuro al pasar el mouse */
+}
+
   .ac-accordion {
     border-color: rgb(244, 136, 28) !important;
     border-radius: 24px !important;

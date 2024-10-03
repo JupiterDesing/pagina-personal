@@ -11,7 +11,7 @@ const { title, type, paddingX, icon} = Astro.props;
 ---
 
 
-	<button class=`text-white py-3 text-xl rounded-xl gap-2 flex items-center w-min font-normal group text-nowrap ${paddingX ? paddingX : "px-5"} ${type === "primary" ? "bg-[#D26314] hover:bg-[#C25406] interactive-button " : type === "secondary" ? "hover:text-primary border border-white hover:border-primary" : type === "navLink" ? "hover:text-primary group" : "hidden"} ` data-modal-trigger={type === "primary" || type === "secondary" ? "modal-id" : ""}>
+	<button class=`text-white py-3 text-xl rounded-xl gap-2 flex items-center w-min font-normal group text-nowrap ${paddingX ? paddingX : "px-5"} ${type === "primary" ? "bg-[#D26314] hover:bg-[#f15a24] interactive-button " : type === "secondary" ? "hover:text-primary border border-white hover:border-primary" : type === "navLink" ? "hover:text-primary group" : "hidden"} ` data-modal-trigger={type === "primary" || type === "secondary" ? "modal-id" : ""}>
 		{icon && (title === 'Instagram' ? <i class="fa-brands fa-instagram" ></i> : title === 'Linkedin' ? <i class="fa-brands fa-linkedin"></i> : title === 'Tiktok' ? <i class="fa-brands fa-tiktok"></i> : <i class="fa-solid fa-at"></i>)}
 		{title}
 	</button>
