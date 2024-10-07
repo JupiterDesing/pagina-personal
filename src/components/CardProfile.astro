@@ -1,4 +1,6 @@
 ---
+import Button from './Button.astro';
+
 interface Props {
 	image: string;
 	body: string;
@@ -24,7 +26,9 @@ const {  image, body , title, subTitle, Link} = Astro.props;
 		<p class="text-white text-xl font-light opacity-0 group-hover:opacity-100 w-2/3 text-center ">
 			{body}
 		</p>
-		<a href={Link} target="_blank" rel="noopener noreferrer" class="border-white border rounded-lg text-white text-xl font-light opacity-0 group-hover:opacity-100 px-8 text-center ">Ver más</a>
+		<a href={Link} target="_blank" rel="noopener noreferrer"class="mt-3" >
+			<Button title="Ver mas" type="secondary" />
+		</a>
 	</div>
 
 	{/* <span class="absolute top-0 left-0 w-full h-full z-30 backdrop-blur-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>*/}

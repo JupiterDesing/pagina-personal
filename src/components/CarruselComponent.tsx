@@ -1,5 +1,6 @@
 import React from 'react';
 import { Carousel } from 'antd';
+import Button from './Button.astro';
 
 const jobs = [
   {title: 'proyecto de landing jupiter', image: '/landing-jupiter.jpeg', href:"https://www.behance.net/gallery/209416989/Landing-Page-UXUI"},
@@ -14,17 +15,25 @@ const CarruselComponent: React.FC = () => {
 
   return (
     
-    <Carousel arrows slidesToShow={window.innerWidth < 768 ? 1 : 2 } dots={false}>
+<Carousel arrows slidesToShow={window.innerWidth < 768 ? 1 : 2 } dots={false}>
   {jobs.map((job) => (
-    <a className='w-full rounded-2xl px-2 h-[280px] relative overflow-hidden' href={job.href} target="_blank" rel="noopener noreferrer">
+    <a className='w-full rounded-2xl px-2 h-[280px] relative overflow-hidden group' href={job.href} target="_blank" rel="noopener noreferrer">
       {/* Imagen del job */}
       <img 
         src={job.image} 
         alt={job.title} 
-        className='w-full h-full rounded-2xl object-cover z-10' 
+        className='w-full h-full rounded-2xl object-cover z-10 mx-2' 
       />
-      {/* Máscara */}
-      <span className="absolute h-[280px] top-0 left-0 bg-backgroundDefault opacity-100 z-20 w-full  rounded-2xl" />
+      {/* Primera máscara */}
+      <span className="absolute h-[280px] top-0 left-0 bg-backgroundDefault opacity-100 z-20 w-full rounded-2xl" />
+      {/* Segunda máscara ajustada */}
+      <span className="absolute top-32 left-60 bg-backgroundPrimary z-30 h-full w-full rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>
+      <div className='text-white py-3 px-4 text-xl rounded-xl gap-2 flex items-center w-min font-normal text-nowrap  border border-white hover:text-primary hover:border-primary absolute top-32 left-52 z-40 opacity-0 group-hover:opacity-100'>
+
+        Ver mas
+
+        </div>
+
     </a>
   ))}
 </Carousel>
