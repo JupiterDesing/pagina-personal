@@ -8,6 +8,8 @@ const jobs = [
   {title: 'mockup marca personal Marisa Perez', image: '/trabajo3.webp',href:"https://www.behance.net/gallery/207927373/Identidad-de-Marca-Personal-Logo"},
   {title: 'identidad de marca de naturaleza', image: '/summit-floor.jpeg',href:"https://www.behance.net/gallery/209424405/Brand-Identity-Logo-Nature"},
   {title: 'mockup de Jupiter Design', image: '/packaging-jupiter.jpeg',href:"https://www.behance.net/gallery/206799851/Brand-identity-Studio-Creativo-Jupiter-Design"},
+  {title: 'etiqueta de vino alma vieja', image: '/botellas.jpeg',href:"https://www.behance.net/gallery/211729441/Etiqueta-de-Vino-Alma-Vieja"},
+  {title: 'identidad de marca de bubble tea', image: '/burbutea.jpeg',href:"https://www.behance.net/gallery/209944795/bubble-tea-Identidad-de-Marca-Logo"},
 ]
 
 const CarruselComponent: React.FC = () => {
