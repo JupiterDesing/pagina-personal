@@ -4,7 +4,7 @@ import Button from "./Button.astro";
 // Datos del menú
 const titlesNavLink = ['Proyectos','Servicios' , 'Proceso', 'Preguntas'];
 ---
-<div class="flex justify-center fixed w-full z-50  pb-3 pt-9 transition-colors duration-300 navbar" id="navbar">
+<div class="flex justify-center fixed w-full z-50  py-6 transition-colors duration-300 navbar" id="navbar">
     <div class="flex justify-between items-center xl:w-[980px] w-full px-9 xl:px-0">
       <!-- Logo -->
       <div id="logoContainer">
@@ -15,7 +15,7 @@ const titlesNavLink = ['Proyectos','Servicios' , 'Proceso', 'Preguntas'];
       </div>
   
       <!-- Menú en pantallas grandes -->
-      <div class="hidden md:flex space-x-4">
+      <div class="hidden md:flex space-x-4 ">
         {titlesNavLink.map((title) => (
           <a href={`#${title.toLowerCase()}`} class="menu-link text-white transition-colors duration-300">
             <Button title={title} type="navLink" />
