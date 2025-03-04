@@ -6,6 +6,7 @@ export default {
 			colors: {
 				primary: '#F4881C',
 				borderColor: '#767676',
+				textColor:"#1B1B1B",
 			},
 			backgroundImage: {
 				backgroundDefault: 'linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, #1B1B1B 100%)',

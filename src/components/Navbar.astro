@@ -2,19 +2,22 @@
 import Button from "./Button.astro";
 
 // Datos del menú
-const titlesNavLink = ['Servicios', 'Nosotros', 'Proyectos', 'Proceso', 'Preguntas'];
+const titlesNavLink = ['Proyectos','Servicios' , 'Proceso', 'Preguntas'];
 ---
-<div class="flex justify-center fixed w-full z-50 backdrop-blur-lg pb-3 pt-9">
+<div class="flex justify-center fixed w-full z-50 backdrop-blur-lg pb-3 pt-9 transition-colors duration-300" id="navbar">
     <div class="flex justify-between items-center xl:w-[980px] w-full px-9 xl:px-0">
       <!-- Logo -->
-      <a href="#home" class="relative z-20 menu-link">
-        <img src="/logo-blanco.svg" alt="Logo de Jupiter Design" class="hover:rotate-180 transition-ease-in duration-500" />
-      </a>
+      <div id="logoContainer">
+        <a href="#home" class="relative z-20">
+          <img src="/logo.png" alt="Logo de Jupiter Design" id="logoWhite" class="block" />
+          <img src="/logo-negro.png" alt="Logo de Jupiter Design Negro" id="logoBlack" class="hidden w-[71px]" />
+        </a>
+      </div>
   
       <!-- Menú en pantallas grandes -->
       <div class="hidden md:flex space-x-4">
         {titlesNavLink.map((title) => (
-          <a href={`#${title.toLowerCase()}`}>
+          <a href={`#${title.toLowerCase()}`} class="menu-link text-white transition-colors duration-300">
             <Button title={title} type="navLink" />
           </a>
         ))}
@@ -27,26 +30,29 @@ const titlesNavLink = ['Servicios', 'Nosotros', 'Proyectos', 'Proceso', 'Pregunt
       </i>
   
       <!-- Menú de contacto en pantallas grandes -->
-      <div class="hidden md:flex">
-        <a href="https://api.whatsapp.com/send?phone=542613012708" target="_blank" rel="noopener noreferrer"><Button title="Contacto" type="secondary" /></a>
+      <div class="hidden md:flex menu-link">
+        <a href="https://api.whatsapp.com/send?phone=542634224847" target="_blank" rel="noopener noreferrer">
+          <Button title="Contáctanos" type="navLink" />
+        </a>
       </div>
     </div>
   
     <!-- Menú desplegable en pantallas pequeñas -->
     <div class="md:hidden w-full absolute top-0 left-0 pt-28 pb-10 px-4 flex flex-col h-screen items-center bg-[#1B1B1B] text-white transition-transform duration-300 ease-in-out transform -translate-y-full" id="menu">
         {titlesNavLink.map((title) => (
-          <a href={`#${title.toLowerCase()}`} class="py-2 menu-link">
+          <a href={`#${title.toLowerCase()}`} class="py-2  text-white transition-colors duration-300">
             <Button title={title} type="navLink" />
           </a>
         ))}
-        <div class="mt-4 ">
-          <a href="https://api.whatsapp.com/send?phone=542613012708"  target="_blank" rel="noopener noreferrer"><Button title="Contacto" type="secondary" /> </a>
-    </div>
+        <div class="mt-4">
+          <a href="https://api.whatsapp.com/send?phone=542634224847"  target="_blank" rel="noopener noreferrer">
+            <Button title="Contáctanos" type="secondary" />
+          </a>
+        </div>
     </div>
 </div>
 
 <script>
-    // Script para el toggle del menú
     document.addEventListener('DOMContentLoaded', () => {
       const menuButton = document.getElementById("menutoggle");
       const menu = document.getElementById("menu");
@@ -78,5 +84,30 @@ const titlesNavLink = ['Servicios', 'Nosotros', 'Proyectos', 'Proceso', 'Pregunt
           }
         });
       });
+
+      // Evento para cambiar solo el color de los enlaces al hacer scroll
+      window.addEventListener("scroll", () => {
+  const isScrolled = window.scrollY > window.innerHeight * .8;
+  const logoWhite = document.getElementById("logoWhite");
+  const logoBlack = document.getElementById("logoBlack");
+  menuLinks.forEach(link => {
+    link.classList.toggle("text-black", isScrolled);
+    link.classList.toggle("text-white", !isScrolled);
+
+    // También aplica al botón dentro del enlace
+    const button = link.querySelector("button");
+    if (button) {
+      button.classList.toggle("text-black", isScrolled);
+      button.classList.toggle("text-white", !isScrolled);
+    }
+    if (isScrolled) {
+      logoWhite?.classList.add("hidden");
+      logoBlack?.classList.remove("hidden");
+    } else {
+      logoWhite?.classList.remove("hidden");
+      logoBlack?.classList.add("hidden");
+    }
+  });
+});
     });
-  </script>
+</script>

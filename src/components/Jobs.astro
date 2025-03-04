@@ -4,12 +4,25 @@ import CarruselComponent from "./CarruselComponent";
 
 ---
 
-<div class="xl:w-[980px] w-full px-9 xl:px-0 flex flex-col items-center gap-8 mb-40 pt-28" id="proyectos" >
+<div class="xl:w-[980px] w-full px-9 xl:px-0 flex flex-col items-center gap-8 mb-40 pt-28 z-30" id="proyectos" >
     <div class="flex flex-col gap-3 items-center">
-    <h2 class="text-4xl xl:text-5xl font-semibold text-white ">Proyectos</h2>
-    <h3 class="text-lg xl:text-2xl text-white font-light">Descubre algunos de nuestros proyectos recientes.</h3>
+    
+    <h3 class="text-lg xl:text-2xl text-textColor font-light px-4">CON BASE EN ARGENTINA / DISPONIBLE EN TODO EL MUNDO</h3>
+    <h2 class="text-4xl xl:text-5xl font-semibold text-textColor ">ESTUDIO CREATIVO</h2>
 </div>
-    <div class="w-full">
+    <div class="w-full lg:hidden">
 <CarruselComponent client:only />
+</div>
+<div class="w-full hidden lg:flex gap-4 lg:flex-col ">
+    <div class="grid grid-cols-3 gap-4">
+        <img src="mokcups-1.png" alt="proyecto de jupiter design 1" class="rounded-3xl h-96 w-full">
+        <img src="mokcups-2.png" alt="proyecto de jupiter design 2" class="rounded-3xl h-96 w-full">
+        <img src="mokcups-3.png" alt="proyecto de jupiter design 3" class="rounded-3xl h-96 w-full">
+    </div>
+    <div class="grid grid-cols-3 gap-4">
+        
+        <img src="mokcups-5.png" alt="proyecto de jupiter design 5" class="rounded-3xl h-96 w-full">
+        <img src="mokcups-4.png" alt="proyecto de jupiter design 4" class="rounded-3xl h-96 col-span-2 w-full">
+    </div>
 </div>
 </div>
