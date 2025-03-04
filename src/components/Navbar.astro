@@ -25,7 +25,7 @@ const titlesNavLink = ['Proyectos','Servicios' , 'Proceso', 'Preguntas'];
   
       <!-- Ícono de hamburguesa para pantallas pequeñas -->
       <i 
-        class="fa-solid fa-bars md:hidden text-white text-3xl cursor-pointer relative z-20"
+        class="fa-solid fa-bars md:hidden text-white text-3xl cursor-pointer relative z-20 "
         id="menutoggle">
       </i>
   
@@ -52,62 +52,88 @@ const titlesNavLink = ['Proyectos','Servicios' , 'Proceso', 'Preguntas'];
     </div>
 </div>
 
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const menuButton = document.getElementById("menutoggle");
-      const menu = document.getElementById("menu");
-      const menuLinks = document.querySelectorAll('.menu-link');
-      
-      // Función para abrir y cerrar el menú
-      const toggleMenu = () => {
-        if (menu?.classList.contains("-translate-y-full")) {
-          menu.classList.remove("-translate-y-full");
-          menu.classList.add("translate-y-0");
-          menuButton?.classList.remove("fa-bars");
-          menuButton?.classList.add("fa-times");
-        } else {
-          menu?.classList.remove("translate-y-0");
-          menu?.classList.add("-translate-y-full");
-          menuButton?.classList.remove("fa-times");
-          menuButton?.classList.add("fa-bars");
-        }
-      };
-  
-      // Evento para abrir/cerrar el menú al hacer clic en el botón de hamburguesa
-      menuButton?.addEventListener("click", toggleMenu);
-  
-      // Evento para cerrar el menú al hacer clic en cualquier enlace del menú
-      menuLinks.forEach(link => {
-        link.addEventListener('click', () => {
-          if (menu?.classList.contains("translate-y-0")) {
-            toggleMenu();
-          }
-        });
-      });
-
-      // Evento para cambiar solo el color de los enlaces al hacer scroll
-      window.addEventListener("scroll", () => {
-  const isScrolled = window.scrollY > window.innerHeight * .8;
+<script>document.addEventListener("DOMContentLoaded", () => {
+  const menuButton = document.getElementById("menutoggle");
+  const menu = document.getElementById("menu");
+  const menuLinks = document.querySelectorAll(".menu-link");
   const logoWhite = document.getElementById("logoWhite");
   const logoBlack = document.getElementById("logoBlack");
-  menuLinks.forEach(link => {
-    link.classList.toggle("text-black", isScrolled);
-    link.classList.toggle("text-white", !isScrolled);
 
-    // También aplica al botón dentro del enlace
-    const button = link.querySelector("button");
-    if (button) {
-      button.classList.toggle("text-black", isScrolled);
-      button.classList.toggle("text-white", !isScrolled);
+  let isMenuOpen = false; // Flag para saber si el menú está abierto
+
+  // Función para abrir/cerrar el menú
+  const toggleMenu = () => {
+    isMenuOpen = !isMenuOpen;
+
+    if (isMenuOpen) {
+      menu?.classList.remove("-translate-y-full");
+      menu?.classList.add("translate-y-0");
+      menuButton?.classList.remove("fa-bars");
+      menuButton?.classList.add("fa-times");
+      
+      menuButton?.classList.remove("text-black"); // Asegurar que no quede negro
+      menuButton?.classList.add("text-white"); // Siempre blanco cuando está abierto
+    } else {
+      menu?.classList.remove("translate-y-0");
+      menu?.classList.add("-translate-y-full");
+      menuButton?.classList.remove("fa-times");
+      menuButton?.classList.add("fa-bars");
+
+      // Si está en la parte superior, el ícono vuelve a blanco
+      if (window.scrollY < window.innerHeight * 0.8) {
+        menuButton?.classList.remove("text-black");
+        menuButton?.classList.add("text-white");
+      } else {
+        menuButton?.classList.add("text-black");
+      }
     }
+  };
+
+  // Evento para abrir/cerrar menú al hacer clic en el botón
+  menuButton?.addEventListener("click", toggleMenu);
+
+  // Evento para cerrar el menú al hacer clic en cualquier enlace
+  menuLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      if (isMenuOpen) {
+        toggleMenu();
+      }
+    });
+  });
+
+  // Evento para cambiar el color del ícono y el logo al hacer scroll
+  window.addEventListener("scroll", () => {
+    const isScrolled = window.scrollY > window.innerHeight * 0.8;
+
+    // Cambiar color de los links
+    menuLinks.forEach((link) => {
+      link.classList.toggle("text-black", isScrolled);
+      link.classList.toggle("text-white", !isScrolled);
+      
+      const button = link.querySelector("button");
+      if (button) {
+        button.classList.toggle("text-black", isScrolled);
+        button.classList.toggle("text-white", !isScrolled);
+      }
+    });
+
+    // Cambiar el logo según el scroll
     if (isScrolled) {
       logoWhite?.classList.add("hidden");
       logoBlack?.classList.remove("hidden");
+      menuButton?.classList.add("text-black");
+      menuButton?.classList.remove("text-white");
     } else {
       logoWhite?.classList.remove("hidden");
       logoBlack?.classList.add("hidden");
+
+      // Si el menú está cerrado, el ícono vuelve a blanco
+      if (!isMenuOpen) {
+        menuButton?.classList.remove("text-black");
+        menuButton?.classList.add("text-white");
+      }
     }
   });
 });
-    });
+
 </script>
