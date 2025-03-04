@@ -4,7 +4,7 @@ import Button from "./Button.astro";
 // Datos del menú
 const titlesNavLink = ['Proyectos','Servicios' , 'Proceso', 'Preguntas'];
 ---
-<div class="flex justify-center fixed w-full z-50 backdrop-blur-lg pb-3 pt-9 transition-colors duration-300" id="navbar">
+<div class="flex justify-center fixed w-full z-50  pb-3 pt-9 transition-colors duration-300 navbar" id="navbar">
     <div class="flex justify-between items-center xl:w-[980px] w-full px-9 xl:px-0">
       <!-- Logo -->
       <div id="logoContainer">
@@ -52,12 +52,16 @@ const titlesNavLink = ['Proyectos','Servicios' , 'Proceso', 'Preguntas'];
     </div>
 </div>
 
-<script>document.addEventListener("DOMContentLoaded", () => {
+<script>
+import Navbar from "./Navbar.astro";
+
+document.addEventListener("DOMContentLoaded", () => {
   const menuButton = document.getElementById("menutoggle");
   const menu = document.getElementById("menu");
   const menuLinks = document.querySelectorAll(".menu-link");
   const logoWhite = document.getElementById("logoWhite");
   const logoBlack = document.getElementById("logoBlack");
+  const navbar = document.getElementById("navbar");
 
   let isMenuOpen = false; // Flag para saber si el menú está abierto
 
@@ -82,6 +86,7 @@ const titlesNavLink = ['Proyectos','Servicios' , 'Proceso', 'Preguntas'];
       // Si está en la parte superior, el ícono vuelve a blanco
       if (window.scrollY < window.innerHeight * 0.8) {
         menuButton?.classList.remove("text-black");
+
         menuButton?.classList.add("text-white");
       } else {
         menuButton?.classList.add("text-black");
@@ -123,6 +128,7 @@ const titlesNavLink = ['Proyectos','Servicios' , 'Proceso', 'Preguntas'];
       logoBlack?.classList.remove("hidden");
       menuButton?.classList.add("text-black");
       menuButton?.classList.remove("text-white");
+      navbar?.classList.add("backdrop-blur-lg");
     } else {
       logoWhite?.classList.remove("hidden");
       logoBlack?.classList.add("hidden");
@@ -132,6 +138,8 @@ const titlesNavLink = ['Proyectos','Servicios' , 'Proceso', 'Preguntas'];
         menuButton?.classList.remove("text-black");
         menuButton?.classList.add("text-white");
       }
+      navbar?.classList.remove("backdrop-blur-lg");
+
     }
   });
 });
